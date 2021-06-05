@@ -631,7 +631,6 @@ img {
 .footer-contact-form {
   margin-top: 15px;
   margin-left: 93px;
- 
 }
 .footer-contact-form-lbl {
   display: block;
@@ -646,19 +645,15 @@ img {
 .footer-conact-form-email {
   height: 50px;
   width: 358px;
-  background-color: transparent;
+  background-color: var(--hero-background-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   color: var(--primary-white-color);
   padding-left: 15px;
   margin-right: 12px;
+}
 
-}
-.footer-conact-form-email:active {
-  background-color: transparent;
-  color: var(--primary-white-color);
-}
 .footer-conact-form-email::placeholder {
   font-size: 16px;
   line-height: 1.25;
@@ -799,7 +794,11 @@ img {
   letter-spacing: 0.01em;
 }
 
-.contact-form-person {
+.contact-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
   fill: var(--primary-text-color);
   transition: fill var(--transition-duration) var(--transition-timing-func);
 }
@@ -809,14 +808,7 @@ img {
   display: block;
 }
 
-.contact-form-person {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-}
-
-.modal-form-input:focus + .contact-form-person {
+.modal-form-input:focus + .contact-form-icon {
   fill: var(--accent-color);
 }
 
@@ -831,7 +823,6 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--grey-text-color);
-  margin-bottom: 30px;
 }
 
 .modal-form-text-policy-link {
@@ -841,11 +832,22 @@ img {
 .modal-form-text-policy::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
   width: 16px;
   height: 15px;
   background-image: url(../images/not-checked.svg);
   cursor: pointer;
   margin-right: 8px;
+}
+
+.user-policy-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.modal-policy-checkbox {
+  position: absolute;
+  bottom: 0;
 }
 
 .modal-policy-checkbox:checked + .modal-form-text-policy::before {
